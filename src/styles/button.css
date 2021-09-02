@@ -1,0 +1,37 @@
+.button {
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 8px;
+    cursor: pointer;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+.button.button--full {
+    margin: 0;
+    width: 100%;
+}
+
+.button.button--red {
+    background: #dc3545;
+}
+
+.button.button--blue {
+    background: #17a2b8;
+}
+
+.button.button--grey {
+    background: #999999;
+}
+
+.button.button--green {
+    background: #28a745;
+}
