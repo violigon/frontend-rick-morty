@@ -1,6 +1,9 @@
+/* src/components/read-all/ReadAll.css */
+
 .read-all {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(2, 360px);
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 0;
 }

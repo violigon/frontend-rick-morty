@@ -1,0 +1,66 @@
+/* src/components/delete/Delete.css */
+
+/* 1) Wrapper da página */
+.delete-page {
+  min-height: calc(100vh - 80px); /* full height menos header+footer */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #f5f5f5;
+}
+
+/* 2) Container branco estilo card */
+.delete-container {
+  background: #ffffff;
+  padding: 24px;
+  max-width: 480px;
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+/* 3) Texto de confirmação */
+.delete-message {
+  font-size: 1.1rem;
+  color: #333333;
+  margin-bottom: 24px;
+}
+
+/* 4) Botões alinhados */
+.delete-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* 5) Classe extra em cada botão para espaçamento vertical */
+.delete-button {
+  flex: 1;
+  max-width: 140px;
+}
+
+/* 6) Se ainda não tiver a classe button--grey: */
+.button--grey {
+  background-color: #6c757d;
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  cursor: pointer;
+}
+
+.button--grey:hover {
+  background-color: #5a6268;
+  transform: translateY(-1px);
+}
+.button--grey:active {
+  background-color: #4e555b;
+  transform: translateY(0);
+}

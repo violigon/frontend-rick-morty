@@ -1,0 +1,14 @@
+/* ReadById.css */
+
+.read-by-id {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+}
+
+.read-by-id .buttons {
+  display: flex;
+  gap: 12px;
+}

@@ -1,3 +1,5 @@
+/* src/App.css */
+
 .app {
     min-height: 100vh;
     display: flex;
@@ -7,4 +9,13 @@
 
 .content {
     flex-grow: 1;
+}
+
+/* adiciona o container de cards com 2 colunas centralizadas */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 360px);
+    justify-content: center;
+    gap: 16px;
+    padding: 16px 0;
 }

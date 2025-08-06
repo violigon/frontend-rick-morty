@@ -1,29 +1,38 @@
+// src/components/delete/Delete.js
+import React from "react";
 import { Api } from "../../api/api";
+import { useHistory, useParams, Link } from "react-router-dom";
 
 import "./Delete.css";
 
-export function Delete(props) {
-    const id = props.match.params.id;
+export function Delete() {
+  const { id } = useParams();
+  const history = useHistory();
 
-    const handleDelete = async event => {
-        event.preventDefault();
+  const handleDelete = async (event) => {
+    event.preventDefault();
+    await Api.buildApiDeleteRequest(Api.deleteUrl(id));
+    history.push("/");
+  };
 
-        await Api.buildApiDeleteRequest(Api.deleteUrl(id));
-
-        props.history.push("/");
-    };
-
-    return (
-        <div className="card">
-            Tem certeza que deseja remover este registro?
-            <br />
-            <br />
-            <button onClick={handleDelete} className="button button--red">
-                Remover
-            </button>
-            <a href={`/view/${id}`} className="button button--grey">
-                Cancelar
-            </a>
+  return (
+    <div className="delete-page">
+      <div className="delete-container">
+        <p className="delete-message">
+          Tem certeza que deseja remover este registro?
+        </p>
+        <div className="delete-buttons">
+          <button
+            onClick={handleDelete}
+            className="button button--red delete-button"
+          >
+            Remover
+          </button>
+          <Link to={`/view/${id}`} className="button button--grey delete-button">
+            Cancelar
+          </Link>
         </div>
-    );
+      </div>
+    </div>
+  );
 }

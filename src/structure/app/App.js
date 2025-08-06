@@ -1,4 +1,5 @@
-import React from "react";
+// src/App.js
+import React, { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 
 import { ReadById } from "../../components/read-by-id/ReadById";
@@ -13,23 +14,32 @@ import { Header } from "../header/Header";
 import "./App.css";
 
 export function App() {
-    return (
-        <div className="app">
-            <Header />
-            <div className="content">
-                <Switch>
-                    <Route path="/" exact={true} component={ReadAll} />
+  // ① Estado de busca elevado para App
+  const [searchTerm, setSearchTerm] = useState("");
 
-                    <Route path="/view/:id" component={ReadById} />
+  return (
+    <div className="app">
+      {/* ② Passa searchTerm e setter para o Header */}
+      <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
-                    <Route path="/add" component={Create} />
+      <div className="content">
+        <Switch>
+          {/* ③ Em vez de component, usamos render para injetar props */}
+          <Route
+            path="/"
+            exact
+            render={(props) => (
+              <ReadAll {...props} searchTerm={searchTerm} />
+            )}
+          />
 
-                    <Route path="/update/:id" component={Update} />
-
-                    <Route path="/delete/:id" component={Delete} />
-                </Switch>
-            </div>
-            <Footer />
-        </div>
-    );
+          <Route path="/view/:id" component={ReadById} />
+          <Route path="/add" component={Create} />
+          <Route path="/update/:id" component={Update} />
+          <Route path="/delete/:id" component={Delete} />
+        </Switch>
+      </div>
+      <Footer />
+    </div>
+  );
 }

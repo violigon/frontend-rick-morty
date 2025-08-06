@@ -1,0 +1,107 @@
+/* ==== RESET TOTAL ==== */
+.card-link,
+.card,
+.card * {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: none !important;
+  outline: none !important;
+}
+.card::before,
+.card::after,
+.card-link::before,
+.card-link::after {
+  content: none !important;
+}
+
+/* ==== CARD PRINCIPAL ==== */
+.card-link {
+  display: inline-block !important;
+  text-decoration: none !important;
+}
+
+.card {
+  display: flex !important;
+  width: 360px !important;
+  height: 140px !important;
+  overflow: hidden !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  transition: transform 0.2s ease !important, box-shadow 0.2s ease !important;
+}
+
+/* ==== LADO ESQUERDO: IMAGEM ==== */
+.card__image {
+  flex-shrink: 0 !important;
+  width: 120px !important;
+  height: 100% !important;
+}
+.card__image img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* ==== LADO DIREITO: FUNDO CINZA E TEXTO BRANCO ==== */
+.card__body {
+  flex: 1 !important;
+  background-color: #3c3e44 !important;
+  color: #ffffff !important;
+  padding: 0 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  transition: background-color 0.2s ease !important;
+}
+
+/* ==== TIPOGRAFIA ==== */
+.card__title {
+  margin: 0 !important;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+.card__subtitle {
+  margin: 4px 0 0 !important;
+  font-size: 0.9rem !important;
+  opacity: 0.8 !important;
+}
+.card__meta {
+  margin-top: 8px !important;
+  font-size: 0.8rem !important;
+  opacity: 0.7 !important;
+}
+
+/* ==== HOVER EFFECT ==== */
+.card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25) !important;
+}
+.card:hover .card__body {
+  background-color: #4a4a4e !important;
+}
+
+/* Placeholder cinza claro */
+.image-placeholder {
+  width: 120px;
+  height: 120px;
+  background-color: #ececec;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+/* Esconde a imagem enquanto não carrega */
+.card-img.hidden {
+  display: none;
+}
+
+/* Exibe a imagem após carregar */
+.card-img.visible {
+  display: block;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+}

@@ -1,8 +1,82 @@
+/* Update.css */
+
+/* Container geral da página de edição */
 .update {
-    margin: 10px;
+  max-width: 600px;            /* mesma largura do form de criação */
+  margin: 24px auto;           /* centraliza horizontalmente */
+  padding: 24px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.update .preview-image {
-    max-width: 300px;
-    max-height: 200px;
+/* Form em coluna */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label dos campos */
+.form__label {
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 4px;
+}
+
+/* Inputs de texto */
+.form__input {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  margin-bottom: 16px;
+}
+
+/* Foco nos inputs */
+.form__input:focus {
+  border-color: #1e88e5;
+}
+
+/* Pré-visualização da imagem */
+.preview-image {
+  margin-bottom: 16px;
+  max-width: 100%;
+  max-height: 300px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+/* Botão ocupa 100% da largura */
+.button--full {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+}
+
+/* Botão azul */
+.button--blue {
+  background-color: #1e88e5;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Hover e active do botão azul */
+.button--blue:hover {
+  background-color: #1565c0;
+  transform: translateY(-1px);
+}
+.button--blue:active {
+  background-color: #0d47a1;
+  transform: translateY(0);
 }
