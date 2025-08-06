@@ -1,5 +1,5 @@
 export const Api = {
-	baseUrl: "http://localhost:3001/personagens",
+	baseUrl: "https://backend-rick-morty.onrender.com/personagens",
 
 	createUrl: () => Api.baseUrl + "/",
 
