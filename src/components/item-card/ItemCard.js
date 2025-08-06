@@ -1,30 +1,31 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./ItemCard.css";
 
-export function ItemCard(props) {
-  const { nome, imagemUrl } = props.item;
+export function ItemCard({ item }) {
   const [loaded, setLoaded] = useState(false);
 
+  // fallback para _id caso você eventualmente use Mongo, mas o RM API
+  // sempre devolve `id`, entã o mais seguro é usar item.id primeiro
+  const id = item.id ?? item._id;
+
   return (
-    <a href={"/view/" + props.item._id} className="card-link">
+    <Link to={`/view/${id}`} className="card-link">
       <div className="card">
         <div className="card__image">
-          {/* Placeholder */}
           {!loaded && <div className="image-placeholder" />}
-
-          {/* Imagem com lazy loading e callback onLoad */}
           <img
-            src={imagemUrl}
-            alt={nome}
+            src={item.imagemUrl}
+            alt={item.nome}
             loading="lazy"
-            className={`card-img ${loaded ? "visible" : "hidden"}`}
+            className={loaded ? "visible card-img" : "hidden card-img"}
             onLoad={() => setLoaded(true)}
           />
         </div>
         <div className="card__body">
-          <h1 className="card__title">{nome}</h1>
+          <h1 className="card__title">{item.nome}</h1>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
